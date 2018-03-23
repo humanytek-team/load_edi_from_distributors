@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <data>
+    <record id="load_edi_from_distributors_view_wizard" model="ir.ui.view">
+      <field name="name">load_edi_from_distributors.view.wizard</field>
+      <field name="model">sale.load.from_distributors_wizard</field>
+      <field name="arch" type="xml">
+        <form string="Load EDI From Distributors">
+          <sheet >
+            <separator colspan="4" string="Please select file to load"/>
+            <group>
+              <field name="edi_file"/>
+            </group>
+          </sheet>
+          <footer>
+            <center>
+              <button name="action_load" type="object" string="Load file" class="oe_highlight"/>
+              <button string="cancel" class="oe_link" special="cancel"/>
+            </center>
+          </footer>
+        </form>
+      </field>
+    </record>
+
+    <act_window name="Load EDI From Distributors" res_model="sale.load.from_distributors_wizard" src_model="sale.load.from_distributors_wizard" view_mode="form" target="new" key2="client_action_multi" id="load_edi_from_distributors_action"/>
+
+    <menuitem id="menu_load_edi_from_distributors" name="Load EDI From Distributors" parent="raloy_load_sales.menu_sale_load_root" action="load_edi_from_distributors_action"/>
+  </data>
+</odoo>
